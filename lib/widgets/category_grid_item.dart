@@ -8,7 +8,17 @@ class CategoriesGridItem extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+   return Container(
+    decoration: BoxDecoration(
+      gradient: LinearGradient(
+        colors: [
+          category.color.withOpacity(0.55),
+          category.color.withOpacity(0.9),
+        ],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      ),
+    ),
+   );
   }
 }
