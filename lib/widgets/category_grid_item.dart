@@ -19,6 +19,10 @@ class CategoriesGridItem extends StatelessWidget{
         end: Alignment.bottomRight,
       ),
     ),
+    child: Text(
+        category.title, 
+        style: Theme.of(context).textTheme.titleLarge!.copyWith()
+        ,),
    );
   }
 }
