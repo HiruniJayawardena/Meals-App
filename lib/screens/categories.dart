@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/data/dummy_data.dart';
+import 'package:meals_app/widgets/category_grid_item.dart';
 class CategoriesScreen extends StatelessWidget{ //the categories should not be handled with state
     const CategoriesScreen({super.key});
 
@@ -9,6 +11,7 @@ class CategoriesScreen extends StatelessWidget{ //the categories should not be h
                 title: const Text('Pick your category'),
             ),
             body: GridView(
+              padding: const EdgeInsets.all(24),
                 // can set the number of columns we want to have
                 // by default cross axis is top to bottom, but this is left to right and we get 2 colums
                 // we can get 2 columns horizontally 
@@ -18,13 +21,10 @@ class CategoriesScreen extends StatelessWidget{ //the categories should not be h
                     crossAxisSpacing: 20,
                     mainAxisSpacing: 20,
                 ), 
-                children: const[
-                    Text('1', style: TextStyle(color: Colors.white),), 
-                    Text('2', style: TextStyle(color: Colors.white),),
-                    Text('3', style: TextStyle(color: Colors.white),),  
-                    Text('4', style: TextStyle(color: Colors.white),),
-                    Text('5', style: TextStyle(color: Colors.white),),
-                    Text('6', style: TextStyle(color: Colors.white),),
+                children: [
+                  // availableCategories.map((category) => CategoriesGridItem(category: category)).toList()
+                  for( final category in availableCategories)
+                    CategoriesGridItem(category: category),
                 ],),
         );
     }
