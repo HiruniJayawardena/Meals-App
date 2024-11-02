@@ -8,24 +8,30 @@ class CategoriesGridItem extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-   return Container(
-    padding: const EdgeInsets.all(16),
-    decoration: BoxDecoration(
-      gradient: LinearGradient(
-        colors: [
-          category.color.withOpacity(0.55),
-          category.color.withOpacity(0.9),
-        ],
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
+   return InkWell( //we can use GestureDetector as well
+   // we use inkwell because it gives us the feedback of a touch
+    onTap: (){},
+    splashColor: Theme.of(context).primaryColor,
+    borderRadius: BorderRadius.circular(15),
+     child: Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            category.color.withOpacity(0.55),
+            category.color.withOpacity(0.9),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
       ),
-    ),
-    child: Text(
-        category.title, 
-        style: Theme.of(context).textTheme.titleLarge!.copyWith(
-          color: Theme.of(context).colorScheme.onSurface,
-        )
-        ,),
+      child: Text(
+          category.title, 
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(
+            color: Theme.of(context).colorScheme.onSurface,
+          )
+          ,),
+     ),
    );
   }
 }
