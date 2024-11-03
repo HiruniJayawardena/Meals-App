@@ -5,6 +5,6 @@ class MealsScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return ;
+    return const Text("helo");
   }
 }
