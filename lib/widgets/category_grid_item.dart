@@ -2,15 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/models/category.dart';
 
 class CategoriesGridItem extends StatelessWidget{
-  const CategoriesGridItem({super.key, required this.category});
+  const CategoriesGridItem({
+    super.key, 
+    required this.category,
+    required this.onSelectCategory,
+  });
 
   final Category category;
+  final void Function() onSelectCategory;
 
   @override
   Widget build(BuildContext context) {
    return InkWell( //we can use GestureDetector as well
    // we use inkwell because it gives us the feedback of a touch
-    onTap: (){},
+    onTap: onSelectCategory,
     splashColor: Theme.of(context).primaryColor,
     borderRadius: BorderRadius.circular(15),
      child: Container(

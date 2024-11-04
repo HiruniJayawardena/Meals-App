@@ -37,7 +37,9 @@ class CategoriesScreen extends StatelessWidget{ //the categories should not be h
                 children: [
                   // availableCategories.map((category) => CategoriesGridItem(category: category)).toList()
                   for( final category in availableCategories)
-                    CategoriesGridItem(category: category),
+                    CategoriesGridItem(category: category, onSelectCategory: (){
+                      _selectCategory(context);
+                    },),
                 ],),
         );
     }
