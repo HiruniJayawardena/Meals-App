@@ -14,7 +14,10 @@ class MealItem extends StatelessWidget{
         onTap: (){},
         child: Stack(
           children: [
-            FadeInImage(placeholder: MemoryImage(kTransparentImage), image: image),
+            FadeInImage(
+              placeholder: MemoryImage(kTransparentImage), 
+              image: NetworkImage(meal.imageUrl),
+            ),
           ],
         ),
       ),);
