@@ -2,16 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/data/dummy_data.dart';
 import 'package:meals_app/screens/meals.dart';
 import 'package:meals_app/widgets/category_grid_item.dart';
+import 'package:meals_app/models/category.dart';
 class CategoriesScreen extends StatelessWidget{ //the categories should not be handled with state
     const CategoriesScreen({super.key});
 
-    void _selectCategory(BuildContext context){ // to call this method we connect it via on tap method on category_grid_item
+    void _selectCategory(BuildContext context, Category category){ // to call this method we connect it via on tap method on category_grid_item
       // Navigator.push(context, route); // because context is not globally available for stateless widgets
+
+      final filteredMeals = dummyMeals
+        .where((meal) => meal.categories.contains(category.id))
+        .toList();
+
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (ctx) => MealsScreen(
-            title: 'some title',
-            meals: [],
+            title: category.title,
+            meals: filteredMeals,
           ),
         ),
       );
@@ -38,7 +44,7 @@ class CategoriesScreen extends StatelessWidget{ //the categories should not be h
                   // availableCategories.map((category) => CategoriesGridItem(category: category)).toList()
                   for( final category in availableCategories)
                     CategoriesGridItem(category: category, onSelectCategory: (){
-                      _selectCategory(context);
+                      _selectCategory(context, category);
                     },),
                 ],),
         );
