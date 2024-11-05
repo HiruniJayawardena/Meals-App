@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/models/meal.dart';
 
-class MealDetails extends StatelessWidget{
-  const MealDetails({super.key});
+class MealDetailsScreen extends StatelessWidget{
+  const MealDetailsScreen({super.key, required this.meal});
+
+  final Meal meal;
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold( // we use scaffold when we want to open a new screen 
+      appBar: AppBar(
+        title: Text(meal.title),
+      ),
+      body: Image.network( // we use network becase the image urls are stored in network
+        meal.imageUrl,
+        height: 300,
+        width: double.infinity,
+        fit: BoxFit.cover,
+      ),
+
+    );
   }
 }
