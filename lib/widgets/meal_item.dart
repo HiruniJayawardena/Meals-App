@@ -11,6 +11,10 @@ class MealItem extends StatelessWidget{
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.all(8),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
+      clipBehavior: Clip.hardEdge, // otherwise the Stack doesn't allow to get the shape
       child: InkWell(
         onTap: (){},
         child: Stack(
