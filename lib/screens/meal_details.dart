@@ -24,7 +24,8 @@ class MealDetailsScreen extends StatelessWidget{
           Text(
             'Ingredients', 
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
-              color: Theme.of(context).colorScheme.onSurface,
+              color: Theme.of(context).colorScheme.primary,
+              fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(height: 14,),
