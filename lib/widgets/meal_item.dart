@@ -15,6 +15,7 @@ class MealItem extends StatelessWidget{
         borderRadius: BorderRadius.circular(8),
       ),
       clipBehavior: Clip.hardEdge, // otherwise the Stack doesn't allow to get the shape
+      elevation: 2, // add shadow to give 3D effect
       child: InkWell(
         onTap: (){},
         child: Stack(
