@@ -12,7 +12,7 @@ class MealsScreen extends StatelessWidget{
   Widget build(BuildContext context){
     Widget content = ListView.builder(
         itemBuilder: (ctx, index) => Text(
-          meals[index].title
+          meals[index].title,
         ),
       );
 
