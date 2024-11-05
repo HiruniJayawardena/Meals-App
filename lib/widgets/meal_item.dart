@@ -18,6 +18,35 @@ class MealItem extends StatelessWidget{
               placeholder: MemoryImage(kTransparentImage), 
               image: NetworkImage(meal.imageUrl),
             ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Container(
+                color: Colors.black54, // Colors.black.withOpacity(0.5), <- slightly transparent
+                padding: const EdgeInsets.symmetric(
+                  vertical: 5,
+                  horizontal: 44,
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      meal.title,
+                      maxLines: 2,
+                      textAlign: TextAlign.center,
+                      softWrap: true, // text is wrapped in a good looking way 
+                      overflow: TextOverflow.ellipsis,  // if we had a very long text it would add ... (3 dots) at the end
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(height: 12,),
+                    Row(children: [],),
+                  ],),  
+              ),
+            ),
           ],
         ),
       ),);
