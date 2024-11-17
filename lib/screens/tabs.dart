@@ -16,6 +16,8 @@ class _TabsScreenState extends State<TabsScreen>{
   int _selectedPageIndex = 0;
   final List<Meal> _favouriteMeals = [];
 
+  void _toggleMealFavouriteStatus() {}
+
   void _selectPage(int index){
     setState(() {
       _selectedPageIndex = index;
