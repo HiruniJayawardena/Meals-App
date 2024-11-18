@@ -22,6 +22,8 @@ class _TabsScreenState extends State<TabsScreen>{
 
     if(isExisting){
       _favouriteMeals.remove(meal);
+    }else{
+      _favouriteMeals.add(meal);
     }
   }
 
