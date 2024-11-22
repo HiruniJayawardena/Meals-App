@@ -5,6 +5,7 @@ class MealDetailsScreen extends StatelessWidget{
   const MealDetailsScreen({super.key, required this.meal});
 
   final Meal meal;
+  final void Function onToggleFavourite;
 
   @override
   Widget build(BuildContext context) {
