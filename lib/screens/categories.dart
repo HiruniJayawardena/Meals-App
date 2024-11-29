@@ -3,8 +3,11 @@ import 'package:meals_app/data/dummy_data.dart';
 import 'package:meals_app/screens/meals.dart';
 import 'package:meals_app/widgets/category_grid_item.dart';
 import 'package:meals_app/models/category.dart';
+import 'package:meals_app/models/meal.dart';
 class CategoriesScreen extends StatelessWidget{ //the categories should not be handled with state
-    const CategoriesScreen({super.key});
+    const CategoriesScreen({super.key, required this.onToggleFavourite});
+
+    final void Function(Meal meal) onToggleFavourite;
 
     void _selectCategory(BuildContext context, Category category){ // to call this method we connect it via on tap method on category_grid_item
       // Navigator.push(context, route); // because context is not globally available for stateless widgets
@@ -18,6 +21,7 @@ class CategoriesScreen extends StatelessWidget{ //the categories should not be h
           builder: (ctx) => MealsScreen(
             title: category.title,
             meals: filteredMeals,
+            onToggleFavourite: onToggleFavourite,
           ),
         ),
       );
