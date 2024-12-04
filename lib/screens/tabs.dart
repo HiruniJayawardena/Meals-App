@@ -65,6 +65,8 @@ class _TabsScreenState extends State<TabsScreen>{
       appBar: AppBar(
         title: Text(activePageTitle),
       ),
+      // side drawers are added on per screen basis
+      drawer: Drawer(),
       body: activePage,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
