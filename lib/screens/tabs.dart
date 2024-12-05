@@ -57,8 +57,8 @@ class _TabsScreenState extends State<TabsScreen>{
           builder: (context) => const FiltersScreen(),
         ),
       );
-    // }else{
-    //   Navigator.of(context).pop();
+    }else{
+      Navigator.of(context).pop();
     }
   }
 

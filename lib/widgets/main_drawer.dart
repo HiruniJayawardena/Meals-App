@@ -56,7 +56,7 @@ class MainDrawer extends StatelessWidget{
               ),
             ),
             onTap: (){
-              onSelectScreen('Meals');
+              onSelectScreen('meals');
             },
           ),
           // Filters List tile
@@ -75,7 +75,7 @@ class MainDrawer extends StatelessWidget{
               ),
             ),
             onTap: (){
-              onSelectScreen('Filters');
+              onSelectScreen('filters');
             },
           ),
         ],
