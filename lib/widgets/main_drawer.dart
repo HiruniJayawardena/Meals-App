@@ -55,7 +55,9 @@ class MainDrawer extends StatelessWidget{
                 fontSize: 24,
               ),
             ),
-            onTap: (){},
+            onTap: (){
+              onSelectScreen('Meals');
+            },
           ),
           // Filters List tile
           ListTile(
@@ -72,7 +74,9 @@ class MainDrawer extends StatelessWidget{
                 fontSize: 24,
               ),
             ),
-            onTap: (){},
+            onTap: (){
+              onSelectScreen('Filters');
+            },
           ),
         ],
       ),

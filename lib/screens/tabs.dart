@@ -49,6 +49,10 @@ class _TabsScreenState extends State<TabsScreen>{
     });
   }
 
+  void _setScreen(String identifier){
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget activePage = CategoriesScreen(onToggleFavourite: _toggleMealFavouriteStatus,);
