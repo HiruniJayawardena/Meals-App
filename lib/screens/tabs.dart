@@ -50,7 +50,11 @@ class _TabsScreenState extends State<TabsScreen>{
   }
 
   void _setScreen(String identifier){
-    
+    if(identifier == 'filters'){
+
+    }else{
+      Navigator.of(context).pop();
+    }
   }
 
   @override
@@ -71,7 +75,7 @@ class _TabsScreenState extends State<TabsScreen>{
         title: Text(activePageTitle),
       ),
       // side drawers are added on per screen basis
-      drawer: const MainDrawer(),
+      drawer: MainDrawer(onSelectScreen: _setScreen,),
       body: activePage,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
