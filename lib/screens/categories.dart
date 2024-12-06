@@ -5,14 +5,15 @@ import 'package:meals_app/widgets/category_grid_item.dart';
 import 'package:meals_app/models/category.dart';
 import 'package:meals_app/models/meal.dart';
 class CategoriesScreen extends StatelessWidget{ //the categories should not be handled with state
-    const CategoriesScreen({super.key, required this.onToggleFavourite});
+    const CategoriesScreen({super.key, required this.onToggleFavourite, required this.availableMeals});
 
     final void Function(Meal meal) onToggleFavourite;
+    final List<Meal> availableMeals;
 
     void _selectCategory(BuildContext context, Category category){ // to call this method we connect it via on tap method on category_grid_item
       // Navigator.push(context, route); // because context is not globally available for stateless widgets
 
-      final filteredMeals = dummyMeals
+      final filteredMeals = availableMeals
         .where((meal) => meal.categories.contains(category.id))
         .toList();
 
