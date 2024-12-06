@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/screens/tabs.dart';
 // import 'package:meals_app/screens/tabs.dart';
 // import 'package:meals_app/widgets/main_drawer.dart';
+// import 'package:meals_app/widgets/pop_scope.dart';
 
 enum Filter{
   glutenFree,
@@ -38,7 +40,8 @@ class _FiltersScreenState extends State<FiltersScreen>{
       //   }
       // } ),
       body: PopScope(
-        onPopInvokedResult: (bool didPop, dynamic result) {
+        onPopInvoked: (didPop) {
+        // onPopInvokedWithResult: (bool didPop, Filter? result) {
           if(didPop) return;
           Navigator.of(context).pop({
           Filter.glutenFree: _glutenFreeFilterSet,
@@ -47,6 +50,7 @@ class _FiltersScreenState extends State<FiltersScreen>{
           Filter.vegan: _veganFilterSet,
         },
       );
+      print('hiii');
     },
         child: Column(
           children: [
